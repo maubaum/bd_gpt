@@ -18,13 +18,12 @@ pip install openai python-dotenv psycopg2-binary supabase
 python seu_arquivo.py
 ```
 
-## Funcionalidades
+## Principais funções
 - `obter_esquema()`: Coleta estrutura do banco.
-- `gerar_query_sql()`: Gera SQL via IA.
-- `executar_query_supabase()`: Executa SQL.
-- `gerar_resposta_natural()`: Traduz resultado para linguagem comum.
-- `main()`: Interface de perguntas/respostas com o usuário.
+- `gerar_query_sql()`: Com base na pergunta do usuário, e o esquema da base SQL , um agente cria uma query SQL para responder a pergunta.
+- `executar_query_supabase()`: Executa a query SQL gerada pelo primeiro agente
+- `gerar_resposta_natural()`: Com base na pergunta do usuário, na query criada e na resposta, usa um agente ára responder ao usuário em uma linguagem comum.
+- `main()`: Função principal que chama as funções acima
 
-## Observações
+## Observações do banco de dados
 - Campo `amount` está em centavos (30026 = R$300,26)
-- Ignorar `type` e `account_group` nas queries.
